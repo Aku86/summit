@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Summit Base — rental alat mendaki di Bekasi Timur.">
+  <title>Summit Base — Rental Alat Mendaki</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header class="site-nav">
+    <a class="brand" href="#beranda">
+      <span class="brand-mark">SB</span>
+      <span>Summit Base</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#alat">Alat</a>
+      <a href="#cara">Cara Sewa</a>
+      <a href="#lokasi">Lokasi</a><a href="#kontak">Kontak</a>
+      <a href="customer.html">Akun</a>
+    </nav>
+    <button class="nav-account" id="navAccount">Masuk / Daftar</button>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="hero-copy">
+        <span class="pill">RENTAL ALAT MENDAKI • BEKASI TIMUR</span>
+        <h1>Siapkan perlengkapan.<br><span>Jelajahi alam.</span></h1>
+        <p>Sewa perlengkapan mendaki yang praktis untuk perjalananmu. Pilih alat, tentukan jumlah unit dan tanggal, lalu konfirmasi pemesanan.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#alat">Lihat Perlengkapan</a>
+          <a class="btn btn-secondary" href="#cara">Cara Sewa</a>
+        </div>
+        <div class="hero-location"><span></span>Dukuh Zamrud, Kota Bekasi Timur</div>
+      </div>
+
+      <div class="hero-art" aria-label="Ilustrasi pegunungan dan hutan">
+        <div class="art-sun"></div>
+        <div class="art-ridge back"></div>
+        <div class="art-ridge front"></div>
+        <div class="art-fog f1"></div>
+        <div class="art-fog f2"></div>
+        <span class="art-tree t1"></span>
+        <span class="art-tree t2"></span>
+        <span class="art-tree t3"></span>
+      </div>
+    </section>
+
+    <section class="section" id="alat">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">PILIH PERLENGKAPAN</span>
+          <h2>Siap dipakai untuk perjalananmu.</h2>
+        </div>
+        <p>Ketersediaan, harga, stok, dan foto dikelola langsung dari dashboard admin.</p>
+      </div>
+      <div class="equipment-grid" id="equipmentGrid">
+        <div class="loading-card">Memuat katalog...</div>
+      </div>
+    </section>
+
+    <section class="how-modern section-soft" id="cara">
+      <div class="section-inner how-modern-inner">
+        <div class="how-modern-head">
+          <div>
+            <span class="eyebrow">CARA SEWA</span>
+            <h2>Mulai dari pilih alat,<br><span>sampai barang siap dipakai.</span></h2>
+          </div>
+          <p>Semua proses dibuat sederhana dan jelas. Tidak perlu keranjang—setiap alat langsung mengarah ke proses pembuatan akun dan pemesanan.</p>
+        </div>
+
+        <div class="how-steps">
+          <article class="how-step">
+            <div class="how-step-no">01</div>
+            <div class="how-step-icon">⌕</div>
+            <div class="how-step-content">
+              <span class="how-step-label">LANGKAH PERTAMA</span>
+              <h3>Pilih perlengkapan</h3>
+              <p>Masuk ke katalog, pilih alat yang ingin disewa, lalu tekan <strong>Sewa Sekarang</strong>.</p>
+              <div class="how-mini">Bisa pilih beberapa jenis alat dalam satu pesanan.</div>
+            </div>
+          </article>
+
+          <article class="how-step">
+            <div class="how-step-no">02</div>
+            <div class="how-step-icon">＋</div>
+            <div class="how-step-content">
+              <span class="how-step-label">ATUR PESANAN</span>
+              <h3>Tentukan jumlah & tanggal</h3>
+              <p>Atur jumlah unit dengan tombol <strong>− / +</strong>. Batas jumlah mengikuti stok yang tersedia.</p>
+              <div class="how-mini">Total harga berubah otomatis sesuai unit × hari sewa.</div>
+            </div>
+          </article>
+
+          <article class="how-step">
+            <div class="how-step-no">03</div>
+            <div class="how-step-icon">↗</div>
+            <div class="how-step-content">
+              <span class="how-step-label">BUAT AKUN</span>
+              <h3>Isi data diri</h3>
+              <p>Lengkapi nama, email, password, dan <strong>nomor telepon</strong> untuk membuat akun customer.</p>
+              <div class="how-mini">Data pesanan tersimpan ke database.</div>
+            </div>
+          </article>
+
+          <article class="how-step">
+            <div class="how-step-no">04</div>
+            <div class="how-step-icon">✓</div>
+            <div class="how-step-content">
+              <span class="how-step-label">VERIFIKASI</span>
+              <h3>Tunggu persetujuan admin</h3>
+              <p>Akun dan pesanan tidak langsung aktif. Admin akan memeriksa dan menyetujui permintaan terlebih dahulu.</p>
+              <div class="how-mini">Status bisa dipantau dari halaman customer.</div>
+            </div>
+          </article>
+
+          <article class="how-step">
+            <div class="how-step-no">05</div>
+            <div class="how-step-icon">▣</div>
+            <div class="how-step-content">
+              <span class="how-step-label">SETELAH DISETUJUI</span>
+              <h3>Kelola sewaan</h3>
+              <p>Setelah aktif, buka dashboard customer untuk melihat pesanan, menambah alat sewa, dan memperpanjang durasi.</p>
+              <div class="how-mini">Pesanan tambahan tetap memerlukan persetujuan admin.</div>
+            </div>
+          </article>
+
+          <article class="how-step how-step-highlight">
+            <div class="how-step-no">06</div>
+            <div class="how-step-icon">★</div>
+            <div class="how-step-content">
+              <span class="how-step-label">SEBELUM BERANGKAT</span>
+              <h3>Siap menikmati perjalanan</h3>
+              <p>Pastikan tanggal, jumlah alat, dan status pesanan sudah sesuai sebelum mengambil perlengkapan.</p>
+              <div class="how-mini">Datang ke lokasi sesuai informasi yang tersedia di menu Lokasi.</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="how-note">
+          <div class="how-note-icon">i</div>
+          <div>
+            <strong>Catatan penting</strong>
+            <p>Persetujuan admin diperlukan untuk akun dan setiap permintaan sewa baru. Jika permintaan ditolak, alasan penolakan akan terlihat di halaman status customer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="account-section section" id="akun">
+      <div class="account-grid">
+        <div class="account-intro">
+          <span class="eyebrow">AREA CUSTOMER</span>
+          <h2>Akunmu,<br>semua sewaanmu.</h2>
+          <p>Setelah login, kamu akan masuk ke halaman customer khusus untuk mengelola sewaan, menambah alat, dan memperpanjang durasi.</p>
+          <button class="btn btn-primary" id="accountPrimary">Masuk / Daftar</button>
+        </div>
+        <div class="account-panel" id="accountPanel">
+          <div class="empty-state">
+            <div class="empty-icon">↗</div>
+            <h3>Belum login</h3>
+            <p>Masuk untuk melihat pesananmu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="location-section section" id="lokasi">
+      <div class="location-grid">
+        <div class="location-map-card">
+          <div class="section-title">
+            <div>
+              <span class="eyebrow">LOKASI SUMMIT BASE</span>
+              <h2>Temukan tempat sewanya.</h2>
+            </div>
+            <p>Datang langsung ke lokasi atau buka petunjuk arah dari Google Maps.</p>
+          </div>
+          <div class="map-frame-wrap">
+            <iframe
+              title="Lokasi Summit Base di Google Maps"
+              src="https://www.google.com/maps?q=Summit+Base,+-6.3100958,+107.0197693&z=17&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+          <a class="map-link" href="https://maps.app.goo.gl/BRevGj7tsrVpxFwDA" target="_blank" rel="noopener noreferrer">
+            Buka Google Maps ↗
+          </a>
+        </div>
+
+        <aside class="location-info-card">
+          <span class="eyebrow">RATING GOOGLE MAPS</span>
+          <div class="rating-main">
+            <strong>5.0</strong>
+            <div>
+              <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+              <span>18 ulasan</span>
+            </div>
+          </div>
+          <div class="rating-divider"></div>
+          <div class="location-detail">
+            <span>Alamat</span>
+            <strong>Blok M3, Perumahan Jl. Dukuh Zamrud No.7 RT01, RT.003/RW.014, Padurenan, Kec. Mustika Jaya, Kota Bekasi, Jawa Barat 17156</strong>
+          </div>
+          <div class="location-detail">
+            <span>Layanan</span>
+            <strong>Tool rental service</strong>
+          </div>
+          <div class="location-detail">
+            <span>Telepon</span>
+            <strong>+62 821-1950-038</strong>
+          </div>
+          <a class="btn btn-primary location-cta" href="https://maps.app.goo.gl/BRevGj7tsrVpxFwDA" target="_blank" rel="noopener noreferrer">
+            Lihat lokasi & ulasan
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="contact" id="kontak">
+      <div>
+        <span class="eyebrow">KONTAK</span>
+        <h2>Butuh bantuan sebelum berangkat?</h2>
+        <p>Summit Base berlokasi di Dukuh Zamrud, Kota Bekasi Timur.</p>
+      </div>
+      <a class="btn btn-light" href="#akun">Buka Akun</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Summit Base</span>
+    <a href="admin.html">Admin</a>
+  </footer>
+
+  <div class="modal" id="authModal" hidden>
+    <div class="modal-card auth-card">
+      <button class="modal-close" data-close="authModal" aria-label="Tutup">×</button>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-auth-tab="register">Daftar</button>
+        <button class="auth-tab" data-auth-tab="login">Masuk</button>
+      </div>
+
+      <section id="registerPanel">
+        <span class="eyebrow">AKUN CUSTOMER</span>
+        <h2>Buat akun & pesan alat</h2>
+        <p class="modal-sub">Produk yang kamu pilih otomatis masuk ke form. Kamu bisa menambah jenis alat lain.</p>
+        <form id="registerForm" class="form-grid">
+          <label>Nama lengkap<input id="regName" required maxlength="100"></label>
+          <label>Email<input id="regEmail" type="email" required maxlength="180"></label>
+          <label>Nomor telepon<input id="regPhone" type="tel" required maxlength="30"></label>
+          <label>Password<div class="password-field"><input id="regPassword" type="password" required minlength="8" maxlength="128" autocomplete="new-password"><button class="password-toggle" type="button" data-password-target="regPassword" aria-controls="regPassword" aria-pressed="false">Tampilkan</button></div></label>
+
+          <div class="form-block full">
+            <div class="form-head"><strong>Pilih alat</strong><span>Jumlah unit per alat</span></div>
+            <div id="registerItems" class="register-items"></div>
+          </div>
+
+          <div class="form-block full dates-box">
+            <div class="form-head"><strong>Masa sewa</strong><span id="dateSummary">Pilih tanggal</span></div>
+            <div class="date-grid">
+              <label>Mulai<input id="regStartDate" type="date" required></label>
+              <label>Kembali<input id="regReturnDate" type="date" required></label>
+            </div>
+          </div>
+
+          <div class="total-box full">
+            <div><span>Total</span><strong id="registerTotal">Rp0</strong></div>
+            <small id="registerSummary">0 jenis • 0 unit</small>
+          </div>
+          <p class="form-message full" id="registerMessage" role="alert"></p>
+          <button class="btn btn-primary full" type="submit">Buat Akun & Pesan</button>
+        </form>
+      </section>
+
+      <section id="loginPanel" hidden>
+        <span class="eyebrow">AKUN CUSTOMER</span>
+        <h2>Masuk ke akunmu</h2>
+        <form id="loginForm" class="stack-form">
+          <label>Email<input id="loginEmail" type="email" required></label>
+          <label>Password<div class="password-field"><input id="loginPassword" type="password" required autocomplete="current-password"><button class="password-toggle" type="button" data-password-target="loginPassword" aria-controls="loginPassword" aria-pressed="false">Tampilkan</button></div></label>
+          <p class="form-message" id="loginMessage" role="alert"></p>
+          <button class="btn btn-primary full" type="submit">Masuk</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <div class="modal" id="bookingModal" hidden>
+    <div class="modal-card">
+      <button class="modal-close" data-close="bookingModal" aria-label="Tutup">×</button>
+      <span class="eyebrow">PESAN ALAT</span>
+      <h2>Atur sewaanmu</h2>
+      <p class="modal-sub">Pilih satu atau beberapa alat. Jumlah unit dibatasi stok yang tersedia.</p>
+      <form id="bookingForm" class="form-grid">
+        <div class="form-block full">
+          <div class="form-head"><strong>Pilih alat</strong><span>Jumlah unit</span></div>
+          <div id="bookingItems" class="register-items"></div>
+        </div>
+        <div class="form-block full dates-box">
+          <div class="date-grid">
+            <label>Mulai<input id="bookingStartDate" type="date" required></label>
+            <label>Kembali<input id="bookingReturnDate" type="date" required></label>
+          </div>
+        </div>
+        <div class="total-box full">
+          <div><span>Total</span><strong id="bookingTotal">Rp0</strong></div>
+          <small id="bookingSummary">0 jenis • 0 unit</small>
+        </div>
+        <p class="form-message full" id="bookingMessage" role="alert"></p>
+        <button class="btn btn-primary full" type="submit">Konfirmasi Sewa</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="pendingModal" hidden>
+    <div class="modal-card pending-card">
+      <button type="button" class="modal-close" data-close="pendingModal" aria-label="Tutup">×</button>
+      <div class="pending-icon">✓</div>
+      <span class="eyebrow">MENUNGGU PERSETUJUAN</span>
+      <h2>Permintaanmu sudah diterima.</h2>
+      <p class="modal-sub" id="pendingMessage">
+        Akun customer dan pesananmu sedang menunggu konfirmasi admin. Kamu belum bisa masuk ke halaman customer sebelum akun disetujui.
+      </p>
+      <div class="pending-info">
+        <div><span>Nomor pesanan</span><strong id="pendingOrderId">-</strong></div>
+        <div><span>Status akun</span><strong>Menunggu</strong></div>
+        <div><span>Status pesanan</span><strong>Menunggu</strong></div>
+      </div>
+      <button class="btn btn-primary full" type="button" data-close="pendingModal">Kembali ke halaman utama</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

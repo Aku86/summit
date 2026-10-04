@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Summit Base — dashboard customer untuk mengelola sewaan alat mendaki.">
+  <title>Summit Base — Customer</title>
+  <link rel="stylesheet" href="customer.css">
+</head>
+<body>
+  <header class="customer-nav">
+    <a class="brand" href="index.html" aria-label="Kembali ke Summit Base">
+      <span class="brand-mark">SB</span>
+      <span>Summit Base</span>
+    </a>
+    <div class="nav-right">
+      <div class="user-mini" id="userMini">Memuat...</div>
+      <button class="logout-btn" id="logoutBtn">Keluar</button>
+    </div>
+  </header>
+
+  <main id="statusView" class="status-page" hidden>
+    <header class="status-hero">
+      <div>
+        <span class="eyebrow">CUSTOMER STATUS</span>
+        <h1>Status akun & pesanan</h1>
+        <p>Di halaman ini kamu dapat memantau keputusan admin. Fitur sewa aktif akan terbuka setelah akun disetujui.</p>
+      </div>
+      <button class="logout-btn" id="statusLogoutBtn">Keluar</button>
+    </header>
+
+    <section class="status-account-card">
+      <div class="status-card-head">
+        <div>
+          <span class="eyebrow">STATUS AKUN</span>
+          <h2 id="statusCustomerName">-</h2>
+          <p id="statusCustomerContact">-</p>
+        </div>
+        <span class="approval-badge pending" id="accountApprovalBadge">Menunggu persetujuan</span>
+      </div>
+      <div class="status-reason" id="accountRejectionBox" hidden>
+        <span>Alasan penolakan admin</span>
+        <strong id="accountRejectionReason">-</strong>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div><span class="eyebrow">STATUS PESANAN</span><h2>Permintaan sewa</h2></div>
+      </div>
+      <div id="statusOrders" class="status-order-list"></div>
+    </section>
+  </main>
+
+  <main class="dashboard" id="dashboardView" hidden>
+    <section class="welcome-grid">
+      <div class="welcome-card">
+        <span class="eyebrow">CUSTOMER AREA</span>
+        <h1>Halo, <span id="customerName">...</span>.</h1>
+        <p>Kelola semua sewaanmu dari satu halaman. Tambah alat kapan saja dan perpanjang durasi tanpa kembali ke halaman utama.</p>
+        <div class="quick-actions">
+          <button class="btn primary" id="addRentalBtn">+ Tambah alat sewa</button>
+          <a class="btn secondary" href="index.html#alat">Lihat katalog</a>
+        </div>
+      </div>
+      <div class="profile-card">
+        <span class="profile-label">AKUN</span>
+        <strong id="profileEmail">-</strong>
+        <span id="profilePhone">-</span>
+        <div class="profile-chip" id="profileApprovalChip">Akun disetujui</div><div class="profile-reason" id="profileApprovalReason" hidden></div>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat"><span>Pesanan aktif</span><strong id="activeCount">0</strong><small>belum dikembalikan</small></article>
+      <article class="stat"><span>Total unit</span><strong id="unitCount">0</strong><small>unit yang sedang disewa</small></article>
+      <article class="stat"><span>Riwayat</span><strong id="historyCount">0</strong><small>total pesanan</small></article>
+      <article class="stat"><span>Total transaksi</span><strong id="totalSpend">Rp0</strong><small>nilai seluruh sewaan</small></article>
+    </section>
+
+    <section class="section" id="pendingSection" hidden>
+      <div class="section-head">
+        <div><span class="eyebrow">MENUNGGU PERSETUJUAN</span><h2>Permintaan yang sedang diperiksa</h2></div>
+        <span class="section-note">Admin harus menyetujui akun/pesanan sebelum aktif.</span>
+      </div>
+      <div id="pendingRentals" class="rental-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div><span class="eyebrow">SEWAAN AKTIF</span><h2>Perjalanan yang sedang berjalan</h2></div>
+        <span class="section-note">Perpanjang pesanan yang sudah disetujui.</span>
+      </div>
+      <div id="activeRentals" class="rental-grid"></div>
+    </section>
+
+    <section class="section history-section">
+      <div class="section-head">
+        <div><span class="eyebrow">RIWAYAT</span><h2>Pesanan sebelumnya</h2></div>
+      </div>
+      <div id="historyRentals" class="history-list"></div>
+    </section>
+
+    <section class="help-card">
+      <div>
+        <span class="eyebrow">BUTUH ALAT LAIN?</span>
+        <h2>Tambah perlengkapan untuk perjalanan berikutnya.</h2>
+        <p>Pilih beberapa jenis alat sekaligus. Jumlah setiap alat mengikuti stok yang tersedia.</p>
+      </div>
+      <button class="btn light" id="addRentalBottom">Tambah alat</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Summit Base</span>
+    <a href="index.html">Kembali ke website</a>
+  </footer>
+
+  <!-- ADD RENTAL -->
+  <div class="modal" id="rentalModal" hidden>
+    <div class="modal-card">
+      <button type="button" class="close-btn" data-close="rentalModal" aria-label="Tutup">×</button>
+      <span class="eyebrow">TAMBAH ALAT SEWA</span>
+      <h2>Buat pesanan tambahan</h2>
+      <p class="modal-sub">Pilih satu atau beberapa alat. Jumlah unit tidak dapat melebihi stok.</p>
+
+      <form id="rentalForm" class="form-grid">
+        <div class="form-block full">
+          <div class="form-head"><strong>Pilih alat</strong><span>Jumlah unit</span></div>
+          <div id="rentalItems" class="item-list"></div>
+        </div>
+
+        <div class="form-block full">
+          <div class="form-head"><strong>Masa sewa</strong><span id="rentalDateSummary">Pilih tanggal</span></div>
+          <div class="date-grid">
+            <label>Mulai<input id="rentalStartDate" type="date" required></label>
+            <label>Kembali<input id="rentalReturnDate" type="date" required></label>
+          </div>
+        </div>
+
+        <div class="total-box full">
+          <div><span>Total</span><strong id="rentalTotal">Rp0</strong></div>
+          <small id="rentalSummary">0 jenis • 0 unit</small>
+        </div>
+
+        <p class="message full" id="rentalMessage" role="alert"></p>
+        <button class="btn primary full" type="submit">Simpan Pesanan</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- EXTEND -->
+  <div class="modal" id="extendModal" hidden>
+    <div class="modal-card small">
+      <button type="button" class="close-btn" data-close="extendModal" aria-label="Tutup">×</button>
+      <span class="eyebrow">PERPANJANG SEWA</span>
+      <h2 id="extendTitle">Perpanjang pesanan</h2>
+      <p class="modal-sub" id="extendCurrent">-</p>
+      <div class="extension-note">Perpanjangan tidak langsung mengubah tanggal sewa. Admin akan memeriksa dan menyetujui permintaan terlebih dahulu.</div>
+
+      <div class="extension-options">
+        <button type="button" class="extend-option" data-days="1">+1 hari</button>
+        <button type="button" class="extend-option" data-days="3">+3 hari</button>
+        <button type="button" class="extend-option" data-days="7">+7 hari</button>
+        <button type="button" class="extend-option" data-days="14">+14 hari</button>
+      </div>
+
+      <div class="extension-result">
+        <div><span>Tambah durasi</span><strong id="extensionDays">+1 hari</strong></div>
+        <div><span>Tanggal kembali baru</span><strong id="extensionReturn">-</strong></div>
+        <div><span>Biaya tambahan</span><strong id="extensionCost">Rp0</strong></div>
+      </div>
+
+      <p class="message" id="extendMessage" role="alert"></p>
+      <button class="btn primary full" id="confirmExtend" type="button">Ajukan Perpanjangan</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="customer.js" defer></script>
+</body>
+</html>
