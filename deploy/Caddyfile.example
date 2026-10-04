@@ -1,5 +1,0 @@
-# Ganti example.com dengan domain produksi Anda.
-example.com, www.example.com {
-    encode gzip zstd
-    reverse_proxy 127.0.0.1:3000
-}
