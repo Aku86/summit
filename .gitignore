@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+.DS_Store
+.vscode/
+.idea/
+
+# Legacy/local SQLite files should never be committed.
+data/*.sqlite
+data/*.sqlite-shm
+data/*.sqlite-wal
